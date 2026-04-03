@@ -42,6 +42,7 @@ import { APP_SIDEBAR } from '@/constants';
 
 export const AppSidebar = () => {
   const { isMobile } = useSidebar();
+
   return (
     <Sidebar
       variant='floating'
@@ -55,6 +56,31 @@ export const AppSidebar = () => {
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
+
+      {/*Sidebar Content */}
+      <SidebarContent>
+        {/* Primary Nav */}
+        <SidebarGroup>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {APP_SIDEBAR.primaryNav.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton
+                    tooltip={item.title}
+                    asChild
+                  >
+                    <a href={item.url}>
+                      <item.Icon />
+
+                      <span>{item.title}</span>
+                    </a>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+      </SidebarContent>
     </Sidebar>
   );
 };
