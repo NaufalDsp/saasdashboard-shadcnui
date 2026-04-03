@@ -51,7 +51,7 @@ export const AppSidebar = () => {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <Logo />
+            <Logo variant={isMobile ? 'default' : 'icon'} />
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>

@@ -10,7 +10,7 @@ import { AppSidebar } from '@/components/AppSidebar';
 export const App = () => {
   return (
     <ThemeProvider defaultTheme='dark'>
-      <SidebarProvider>
+      <SidebarProvider open={false}>
         <AppSidebar />
 
         <SidebarInset></SidebarInset>
