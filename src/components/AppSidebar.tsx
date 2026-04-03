@@ -38,7 +38,23 @@ import { Logo } from '@/assets/Logo';
  *
  * Constants
  */
+import { APP_SIDEBAR } from '@/constants';
 
 export const AppSidebar = () => {
-  return <div className=''>App Sidebar</div>;
+  const { isMobile } = useSidebar();
+  return (
+    <Sidebar
+      variant='floating'
+      collapsible='icon'
+    >
+      {/*Sidebar Header */}
+      <SidebarHeader>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <Logo />
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarHeader>
+    </Sidebar>
+  );
 };
