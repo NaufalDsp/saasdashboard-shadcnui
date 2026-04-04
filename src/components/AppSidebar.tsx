@@ -39,10 +39,12 @@ import { Logo } from '@/assets/Logo';
  * Constants
  */
 import { APP_SIDEBAR } from '@/constants';
+import { useEffect } from 'react';
 
 export const AppSidebar = () => {
-  const { isMobile } = useSidebar();
+  const { isMobile, toggleSidebar } = useSidebar();
 
+  useEffect(() => toggleSidebar(), [toggleSidebar]);
   return (
     <Sidebar
       variant='floating'
@@ -64,6 +66,28 @@ export const AppSidebar = () => {
           <SidebarGroupContent>
             <SidebarMenu>
               {APP_SIDEBAR.primaryNav.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton
+                    tooltip={item.title}
+                    asChild
+                  >
+                    <a href={item.url}>
+                      <item.Icon />
+
+                      <span>{item.title}</span>
+                    </a>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        {/* Secondary Nav */}
+        <SidebarGroup className='mt-auto'>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {APP_SIDEBAR.secondaryNav.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton
                     tooltip={item.title}
