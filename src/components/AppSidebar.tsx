@@ -20,6 +20,7 @@ import {
   SidebarGroupContent,
 } from '@/components/ui/sidebar';
 import { Button } from '@/components/ui/button';
+import { UserMenu } from '@/components/UserMenu';
 
 /**
  *
@@ -113,7 +114,7 @@ export const AppSidebar = () => {
         <SidebarMenu>
           <SidebarMenuItem className={cn(isMobile && 'p-2')}>
             {isMobile ? (
-              <div className=''>
+              <div className='flex justify-between items-start gap-2'>
                 <div className='grid grid-cols-[max-content_minmax(0,1fr)] items-center gap-2'>
                   <div className='relative'>
                     <Avatar
@@ -134,9 +135,17 @@ export const AppSidebar = () => {
                     </p>
                   </div>
                 </div>
+
+                <Button
+                  variant='ghost'
+                  size='icon-sm'
+                  aria-label='Logout'
+                >
+                  <LogOutIcon />
+                </Button>
               </div>
             ) : (
-              <></>
+              <UserMenu />
             )}
           </SidebarMenuItem>
         </SidebarMenu>
