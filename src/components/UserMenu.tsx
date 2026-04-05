@@ -51,12 +51,17 @@ export const UserMenu = () => {
         </DropdownMenuGroup>
 
         <DropdownMenuSeparator />
-        <DropdownMenuRadioGroup>
+
+        <DropdownMenuRadioGroup
+          value={APP_SIDEBAR.curProfile.email}
+          className='space-y-1'
+        >
           <DropdownMenuLabel>Switch Account</DropdownMenuLabel>
           {APP_SIDEBAR.allProfiles.map((profile) => (
             <DropdownMenuRadioItem
               key={profile.email}
               value={profile.email}
+              className='data-[state=checked]:bg-secondary'
             >
               <div className='grid grid-cols-[max-content_minmax(0,1fr)] items-center gap-2'>
                 <div className='relative'>
@@ -78,7 +83,32 @@ export const UserMenu = () => {
               </div>
             </DropdownMenuRadioItem>
           ))}
+
+          <DropdownMenuItem asChild>
+            <Button
+              variant='outline'
+              size='sm'
+              className='w-full'
+            >
+              <PlusIcon />
+              <span>Add Account</span>
+            </Button>
+          </DropdownMenuItem>
         </DropdownMenuRadioGroup>
+
+        <DropdownMenuSeparator />
+        <DropdownMenuGroup>
+          {APP_SIDEBAR.userMenu.itemsSecondary.map((item) => (
+            <DropdownMenuItem key={item.title}>
+              <item.Icon />
+
+              <span>{item.title}</span>
+              {item.kbd && (
+                <DropdownMenuShortcut>{item.kbd}</DropdownMenuShortcut>
+              )}
+            </DropdownMenuItem>
+          ))}
+        </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>
   );
