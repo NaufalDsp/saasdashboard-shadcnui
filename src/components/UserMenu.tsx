@@ -16,7 +16,6 @@ import { Button } from '@/components/ui/button';
 import { PlusIcon } from 'lucide-react';
 
 import { APP_SIDEBAR } from '@/constants';
-import { profile } from 'console';
 
 export const UserMenu = () => {
   return (

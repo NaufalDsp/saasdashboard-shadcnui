@@ -15,7 +15,9 @@ export const App = () => {
         <SidebarProvider open={false}>
           <AppSidebar />
 
-          <SidebarInset></SidebarInset>
+          <SidebarInset>
+            <Header />
+          </SidebarInset>
         </SidebarProvider>
       </TooltipProvider>
     </ThemeProvider>

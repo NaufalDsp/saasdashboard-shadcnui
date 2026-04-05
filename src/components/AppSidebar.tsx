@@ -40,12 +40,10 @@ import { Logo } from '@/assets/Logo';
  * Constants
  */
 import { APP_SIDEBAR } from '@/constants';
-import { useEffect } from 'react';
 
 export const AppSidebar = () => {
-  const { isMobile, toggleSidebar } = useSidebar();
+  const { isMobile } = useSidebar();
 
-  useEffect(() => toggleSidebar(), [toggleSidebar]);
   return (
     <Sidebar
       variant='floating'
