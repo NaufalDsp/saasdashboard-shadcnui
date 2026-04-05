@@ -61,7 +61,7 @@ export const UserMenu = () => {
               <div className='grid grid-cols-[max-content_minmax(0,1fr)] items-center gap-2'>
                 <div className='relative'>
                   <Avatar
-                    src={APP_SIDEBAR.curProfile.src}
+                    src={profile.src}
                     size='36px'
                     round='8px'
                   />
@@ -70,11 +70,9 @@ export const UserMenu = () => {
                 </div>
 
                 <div>
-                  <h3 className='text-sm font-semibold'>
-                    {APP_SIDEBAR.curProfile.name}
-                  </h3>
+                  <h3 className='text-sm font-semibold'>{profile.name}</h3>
                   <p className='text-sm text-muted-foreground truncate'>
-                    {APP_SIDEBAR.curProfile.email}
+                    {profile.email}
                   </p>
                 </div>
               </div>
