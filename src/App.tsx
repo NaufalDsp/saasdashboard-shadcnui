@@ -24,7 +24,11 @@ export const App = () => {
               <Page>
                 <PageHeader />
                 <div className=''>
-                  <DashboardCard></DashboardCard>
+                  <DashboardCard
+                    title='Vendor Breakdown'
+                    description='Keep track of vendors and their security ratings.'
+                    buttonText='View Full Report'
+                  ></DashboardCard>
                 </div>
               </Page>
             </main>
