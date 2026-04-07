@@ -8,7 +8,7 @@ import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { AppSidebar } from '@/components/AppSidebar';
 import { Header } from '@/components/Header';
-import { Page } from '@/components/Page';
+import { Page, PageHeader } from '@/components/Page';
 
 export const App = () => {
   return (
@@ -20,7 +20,9 @@ export const App = () => {
           <SidebarInset>
             <Header />
             <main>
-              <Page></Page>
+              <Page>
+                <PageHeader />
+              </Page>
             </main>
           </SidebarInset>
         </SidebarProvider>
