@@ -11,7 +11,7 @@ import { useTheme } from '@/components/ThemeProvider';
 import { MoonIcon, SunIcon, MonitorIcon, CheckIcon } from 'lucide-react';
 
 export const ThemeToggle = () => {
-  const { Theme, setTheme } = useTheme;
+  const { theme, setTheme } = useTheme();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -25,6 +25,32 @@ export const ThemeToggle = () => {
           <MoonIcon className='absolute scale-100 rotate-90 tranisiton-all dark:scale-100 dark:rotate-0' />
         </Button>
       </DropdownMenuTrigger>
+
+      <DropdownMenuContent
+        align='end'
+        className='w-40'
+      >
+        <DropdownMenuItem onClick={() => setTheme('light')}>
+          <SunIcon />
+
+          <span>Light</span>
+          {theme === 'light' && <CheckIcon className='ms-auto' />}
+        </DropdownMenuItem>
+
+        <DropdownMenuItem onClick={() => setTheme('dark')}>
+          <MoonIcon />
+
+          <span>Dark</span>
+          {theme === 'dark' && <CheckIcon className='ms-auto' />}
+        </DropdownMenuItem>
+
+        <DropdownMenuItem onClick={() => setTheme('system')}>
+          <MonitorIcon />
+
+          <span>System</span>
+          {theme === 'system' && <CheckIcon className='ms-auto' />}
+        </DropdownMenuItem>
+      </DropdownMenuContent>
     </DropdownMenu>
   );
 };
