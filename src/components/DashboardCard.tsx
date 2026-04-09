@@ -61,6 +61,16 @@ export const DashboardCard = ({
           </DropdownMenuContent>
         </DropdownMenu>
       </CardHeader>
+
+      <CardContent className='grid grid-cols-1 grow'>{children}</CardContent>
+      <CardFooter className='border-t'>
+        <Button
+          variant='outline'
+          className='ml-auto'
+        >
+          {buttonText}
+        </Button>
+      </CardFooter>
     </Card>
   );
 };
