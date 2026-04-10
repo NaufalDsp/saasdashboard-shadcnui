@@ -10,6 +10,7 @@ import { AppSidebar } from '@/components/AppSidebar';
 import { Header } from '@/components/Header';
 import { Page, PageHeader } from '@/components/Page';
 import { DashboardCard } from '@/components/DashboardCard';
+import { AppBarChart } from '@/components/AppBarChart';
 
 export const App = () => {
   return (
@@ -28,7 +29,9 @@ export const App = () => {
                     title='Vendor Breakdown'
                     description='Keep track of vendors and their security ratings.'
                     buttonText='View Full Report'
-                  ></DashboardCard>
+                  >
+                    <AppBarChart />
+                  </DashboardCard>
                 </div>
               </Page>
             </main>
