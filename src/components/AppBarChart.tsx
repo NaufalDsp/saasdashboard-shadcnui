@@ -26,10 +26,42 @@ export const AppBarChart = () => {
       config={ChartConfig}
       className=''
     >
-      <BarChart accessibilityLayer>
+      <BarChart
+        accessibilityLayer
+        data={VENDOR_BREAKDOWN}
+        barSize={isMobile ? 12 : 30}
+      >
         <CartesianGrid vertical={false} />
 
-        <XAxis />
+        <Bar
+          dataKey='asia'
+          stackId='a'
+          fill='var(--color-asia)'
+        />
+        <Bar
+          dataKey='us'
+          stackId='a'
+          fill='var(--color-us)'
+        />
+        <Bar
+          dataKey='eu'
+          stackId='a'
+          fill='var(--color-eu)'
+        />
+
+        <XAxis
+          dataKey='month'
+          tickLine={false}
+          tickMargin={10}
+          axisLine={false}
+          tickFormatter={(value) => value.slice(0, 3)}
+        />
+        {!isMobile && (
+          <YAxis
+            tickLine={false}
+            axisLine={false}
+          />
+        )}
       </BarChart>
     </ChartContainer>
   );
