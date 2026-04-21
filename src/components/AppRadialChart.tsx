@@ -29,8 +29,8 @@ export const AppRadialChart = () => {
     >
       <RadialBarChart
         data={VENDOR_MONITORED}
-        innerRadius={90}
-        outerRadius={140}
+        innerRadius={70}
+        outerRadius={100}
         cy={104}
         startAngle={0}
         endAngle={180}
@@ -47,6 +47,7 @@ export const AppRadialChart = () => {
           stackId='a'
           fill='var(--color-monitored)'
           cornerRadius={20}
+          className='stroke-transparent stroke-2'
         />
         <PolarRadiusAxis
           tick={false}
