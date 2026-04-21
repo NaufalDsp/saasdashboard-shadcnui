@@ -12,7 +12,7 @@ import { VENDOR_MONITORED } from '@/constants';
 const chartConfig = {
   monitored: {
     label: 'Total Monitored',
-    color: 'var(--chart-1)',
+    color: 'var(--chart-3)',
   },
   limit: {
     label: 'Available limit',
@@ -23,7 +23,10 @@ const chartConfig = {
 export const AppRadialChart = () => {
   const totalLimits = VENDOR_MONITORED[0].monitored + VENDOR_MONITORED[0].limit;
   return (
-    <ChartContainer config={chartConfig}>
+    <ChartContainer
+      config={chartConfig}
+      className='w-[200px] h-[110px]'
+    >
       <RadialBarChart
         data={VENDOR_MONITORED}
         innerRadius={90}
@@ -61,7 +64,8 @@ export const AppRadialChart = () => {
                   >
                     <tspan
                       x={viewBox.cx}
-                      y={viewBox.cy}
+                      y={(viewBox.cy || 0) - 16}
+                      className='fill-foreground text-2xl font-bold'
                     >
                       {totalLimits.toLocaleString()}
                     </tspan>
@@ -73,6 +77,11 @@ export const AppRadialChart = () => {
             }}
           />
         </PolarRadiusAxis>
+
+        <ChartTooltip
+          cursor={false}
+          content={<ChartTooltipContent />}
+        />
       </RadialBarChart>
     </ChartContainer>
   );
