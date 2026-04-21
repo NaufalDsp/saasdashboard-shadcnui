@@ -8,7 +8,7 @@ import {
 
 import { useIsMobile } from '@/hooks/use-mobile';
 
-import type { ChartConfig, ChartConfig } from '@/components/ui/chart';
+import type { ChartConfig } from '@/components/ui/chart';
 
 import { VENDOR_BREAKDOWN } from '@/constants';
 
@@ -24,7 +24,7 @@ export const AppBarChart = () => {
   return (
     <ChartContainer
       config={ChartConfig}
-      className=''
+      className='h-70 lg:h-52 w-full'
     >
       <BarChart
         accessibilityLayer
@@ -47,6 +47,7 @@ export const AppBarChart = () => {
           dataKey='eu'
           stackId='a'
           fill='var(--color-eu)'
+          radius={[8, 8, 0, 0]}
         />
 
         <XAxis
