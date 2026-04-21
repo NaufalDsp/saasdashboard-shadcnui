@@ -63,6 +63,16 @@ export const AppBarChart = () => {
             axisLine={false}
           />
         )}
+
+        <ChartTooltip content={<ChartTooltipContent />} />
+
+        {!isMobile && (
+          <ChartLegend
+            content={
+              <p className='font-semibold text-muted-foreground mt-2'>Month</p>
+            }
+          />
+        )}
       </BarChart>
     </ChartContainer>
   );
