@@ -11,6 +11,7 @@ import { Header } from '@/components/Header';
 import { Page, PageHeader } from '@/components/Page';
 import { DashboardCard } from '@/components/DashboardCard';
 import { AppBarChart } from '@/components/AppBarChart';
+import { AppRadialChart } from '@/components/AppRadialChart';
 
 export const App = () => {
   return (
