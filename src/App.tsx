@@ -32,6 +32,13 @@ export const App = () => {
                   >
                     <AppBarChart />
                   </DashboardCard>
+                  <DashboardCard
+                    title='Vendor Monitored'
+                    description="You're using 80% of available of spots"
+                    buttonText='Upgrade Plan'
+                  >
+                    <AppRadialChart />
+                  </DashboardCard>
                 </div>
               </Page>
             </main>
